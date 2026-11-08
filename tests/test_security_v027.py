@@ -139,7 +139,7 @@ class GitSecurityTests(unittest.TestCase):
 
     def test_new_ignored_output_still_allowed(self):
         self.write('reports/\n', '.gitignore')
-        self.assertEqual(ensure_safe_output(self.repo / 'reports/new'), self.repo / 'reports/new')
+        self.assertEqual(ensure_safe_output(self.repo / 'reports/new'), (self.repo / 'reports/new').resolve())
 
     def test_git_failure_does_not_allow_output(self):
         self.write('reports/\n', '.gitignore')
