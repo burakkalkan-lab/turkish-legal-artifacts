@@ -70,3 +70,7 @@ Sistem bir ön inceleme raporu üretir. Kaynak ve iddia karşılaştırmasını,
 JSON raporlarında `uzman_onayi_gerekli` daima `true` olmalıdır; doğrulayıcı `false` değerini reddeder. Bu bir insan onayı kimlik doğrulama sistemi değildir. Hukukçunun kimliği, inceleme tarihi ve kararı kurumun kendi iş akışında ayrıca kayıt altına alınmalıdır.
 
 Public GitHub deposundaki araçlar kurulup kullanılabilir. Python kaynak indirme, HTML/PDF metni çıkarma ve rapor doğrulamada kullanılır. AI becerisi ayrıca uyumlu bir model ortamında çalıştırılır; varsa model/API ücreti bu pakete dahil değildir.
+
+## İsteğe bağlı resmî yargı kaynakları modülü
+
+Yargıtay ve Danıştay karar arama/indirme ile AYM bireysel başvuru ve norm denetimi için güvenli karar bağlantısı okuma desteği, ayrı bir Python aracı olarak sunulur. **Deneysel** API uç noktaları ve AYM manuel arama sınırı için [resmî kaynaklar kullanım rehberini](cite-check-tr/scripts/OFFICIAL_SOURCES.md) okuyun. Bu araç hukuki iddiaları kendiliğinden doğrulamaz ve yeni bir MCP sunucusu kurmaz.
