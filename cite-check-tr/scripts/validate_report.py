@@ -98,6 +98,12 @@ def validate(report):
 
 
 def main(argv=None):
+    # The Windows locale can default to cp1252, which cannot encode Turkish CLI messages.
+    # Emit UTF-8 consistently for terminal users and automation alike.
+    if hasattr(sys.stdout, 'reconfigure'):
+        sys.stdout.reconfigure(encoding='utf-8')
+    if hasattr(sys.stderr, 'reconfigure'):
+        sys.stderr.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('report', help='Rapor JSON dosyası')
     args = parser.parse_args(argv)
