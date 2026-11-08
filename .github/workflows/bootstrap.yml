@@ -24,6 +24,7 @@ jobs:
           tar -xjf /tmp/tla_release.tar.bz2 -C .
           rm -rf .bootstrap
           rm .github/workflows/bootstrap.yml
+          python -m pip install -r cite-check-tr/scripts/requirements.txt
           python tests/verify_release.py
           python tools/check_repo_hygiene.py --tree
           git config user.name "github-actions[bot]"
