@@ -61,6 +61,8 @@ class SameHostRedirect(SafeRedirect):
         self.hostname = hostname
 
     def redirect_request(self, req, fp, code, msg, headers, newurl):
+        if req is not None and req.get_method() == "POST":
+            raise UnsafeURL("Arama POST isteğinde yönlendirme reddedildi.")
         parsed = urlsplit(newurl)
         if parsed.scheme != "https" or parsed.hostname != self.hostname or parsed.port is not None:
             raise UnsafeURL("Resmî kaynak erişiminde farklı hedefe yönlendirme reddedildi.")
