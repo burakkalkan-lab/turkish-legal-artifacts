@@ -1,4 +1,4 @@
 beautifulsoup4>=4.12,<5
 pypdf>=6.21.4,<7
-playwright>=1.50,<2
+playwright>=1.64.1,<2
 jsonschema[format-nongpl]>=4.20,<5
