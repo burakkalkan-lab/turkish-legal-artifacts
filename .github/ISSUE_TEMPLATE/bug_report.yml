@@ -1,0 +1,22 @@
+name: Hata bildirimi
+description: Beklenmeyen davranış veya yanlış sonuç bildirin
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Gerçek müvekkil belgesi, TCKN, telefon, adres, e-posta, dava dosyası, API anahtarı/token veya erişim bilgisi yazmayın.**
+        Sentetik veya anonimleştirilmiş örnek kullanın. Kanıt klasörlerini (`evidence/`) ve indirilmiş kaynak dosyalarını eklemeyin.
+  - type: textarea
+    id: what
+    attributes:
+      label: Ne oldu?
+      description: Komut, sürüm, beklenen ve gerçek sonuç.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Gizlilik onayı
+      options:
+        - label: Bu bildirimde gerçek kişisel veri, müvekkil belgesi, sır veya erişim bilgisi bulunmuyor.
+          required: true

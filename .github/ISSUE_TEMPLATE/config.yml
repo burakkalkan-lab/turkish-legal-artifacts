@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Güvenlik açığı bildirimi (herkese açık issue açmayın)
+    url: https://github.com/burakkalkan-lab/turkish-legal-artifacts/security/advisories/new
+    about: Güvenlik sorunlarını özel güvenlik bildirimi ile iletin. Issue içine sır, müvekkil belgesi veya istismar verisi koymayın.

@@ -1,0 +1,4 @@
+#!/bin/sh
+# Blocks commits containing evidence files, secrets or valid TCKN numbers.
+# Enable once per clone:  git config core.hooksPath .githooks
+exec "${PYTHON:-python3}" "$(git rev-parse --show-toplevel)/tools/check_repo_hygiene.py" --staged

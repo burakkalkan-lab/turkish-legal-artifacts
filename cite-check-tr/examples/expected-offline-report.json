@@ -1,0 +1,59 @@
+{
+  "rapor_surumu": "0.2.7",
+  "belge_adi": "Sentetik iş uyuşmazlığı — çevrimdışı deneme",
+  "kontrol_tarihi": "2026-11-08",
+  "olay_tarihi": null,
+  "erisim_modu": "cevrimdisi",
+  "uyari": "Sentetik test. Kaynak erişimi olmadığından gerçek doğrulama yapılmadı; bu rapor hukuki görüş değildir.",
+  "bulgular": [
+    {
+      "id": "A1",
+      "atif_turu": "yargitay",
+      "atif_metni": "Yargıtay 99. Hukuk Dairesi 2099/12345 E., 2099/67890 K.",
+      "iddia": "İşçinin her geç kalışının haklı fesih sayılacağı",
+      "kimlik_duzeyi": "yok",
+      "durum": "dogrulanamadi",
+      "gerekce": "Sentetik karar atfı; resmî karar tam metnine erişim yapılmadı. Kimlik ve iddia doğrulanamaz.",
+      "kaynak_url": null,
+      "kaynak_erisim_tarihi": null,
+      "kanit_konumu": null,
+      "insan_kontrolu": "Gerçek bir karar kullanılarak resmî sistemden kurum, daire, E./K. ve ilgili paragraf kontrol edilmelidir.",
+      "resmi_basvuru_adi": "Yargıtay Karar Arama",
+      "resmi_basvuru_url": "https://karararama.yargitay.gov.tr/",
+      "erisim_kaydi": [
+        {
+          "url": null,
+          "tarih": null,
+          "sonuc": "cevrimdisi_test",
+          "aciklama": "Açıkça seçilmiş çevrimdışı regresyon testi; ağ isteği yapılmadı."
+        }
+      ],
+      "kanit_alintisi": null
+    },
+    {
+      "id": "A2",
+      "atif_turu": "mevzuat",
+      "atif_metni": "4857 sayılı İş Kanunu m. 24",
+      "iddia": "İşverenin her durumda tek taraflı ücret indirimi yapabileceği",
+      "kimlik_duzeyi": "yok",
+      "durum": "dogrulanamadi",
+      "gerekce": "Canlı mevzuat metni ve olay tarihi kontrol edilmedi. Burada yalnızca çevrimdışı test davranışı gösteriliyor.",
+      "kaynak_url": null,
+      "kaynak_erisim_tarihi": null,
+      "kanit_konumu": null,
+      "insan_kontrolu": "İlgili maddeyi resmî kaynaktan açarak iddiayı ve yürürlük tarihini denetleyin.",
+      "resmi_basvuru_adi": "Mevzuat Bilgi Sistemi",
+      "resmi_basvuru_url": "https://www.mevzuat.gov.tr/",
+      "erisim_kaydi": [
+        {
+          "url": null,
+          "tarih": null,
+          "sonuc": "cevrimdisi_test",
+          "aciklama": "Açıkça seçilmiş çevrimdışı regresyon testi; ağ isteği yapılmadı."
+        }
+      ],
+      "kanit_alintisi": null
+    }
+  ],
+  "uzman_onayi_gerekli": true
+}

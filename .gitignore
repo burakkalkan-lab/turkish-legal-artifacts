@@ -1,0 +1,46 @@
+# Do not commit downloaded legal sources, sensitive materials or audit evidence.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+
+# Evidence bundles, reports and user data (may contain client data)
+**/evidence/
+.cite-check-tr/
+**/private/
+**/confidential/
+**/client-data/
+**/reports/
+**/raporlar/
+**/output/
+**/outputs/
+**/cikti/
+http-source.*
+browser-source.*
+http-text.txt
+browser-text.txt
+evidence.json
+*.log
+
+# Keys and local databases
+*.pem
+*.key
+*.p12
+*.pfx
+*.sqlite
+*.sqlite3
+*.db
+
+.DS_Store
+dist/
+build/
+*.egg-info/
+.coverage
+htmlcov/
+Thumbs.db

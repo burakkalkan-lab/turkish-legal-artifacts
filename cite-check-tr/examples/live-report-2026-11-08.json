@@ -1,0 +1,65 @@
+{
+  "rapor_surumu": "0.2.7",
+  "belge_adi": "Sentetik atıflar — canlı kaynak denemesi",
+  "kontrol_tarihi": "2026-11-08",
+  "olay_tarihi": null,
+  "erisim_modu": "karma",
+  "uyari": "Hukuki görüş değildir. TBMM kabul metni incelendi; güncel konsolide sürüm ve olay tarihindeki uygulanabilirlik doğrulanmadı.",
+  "bulgular": [
+    {
+      "id": "A1",
+      "atif_turu": "yargitay",
+      "atif_metni": "Yargıtay 99. Hukuk Dairesi 2099/12345 E., 2099/67890 K.",
+      "iddia": "İşçinin her geç kalışının haklı fesih sayılacağı",
+      "kimlik_duzeyi": "yok",
+      "durum": "dogrulanamadi",
+      "gerekce": "Sentetik karar künyesi. Yargıtay başlangıç sayfası zaman aşımı verdi; karar metni ve iddia desteği doğrulanamadı. Bu, kararın yokluğuna ilişkin kanıt değildir.",
+      "kaynak_url": null,
+      "kaynak_erisim_tarihi": null,
+      "kanit_konumu": null,
+      "insan_kontrolu": "Gerçek bir karar kullanılarak resmî sistemden kurum, daire, E./K. ve ilgili paragraf kontrol edilmelidir.",
+      "resmi_basvuru_adi": "Yargıtay Karar Arama",
+      "resmi_basvuru_url": "https://karararama.yargitay.gov.tr/",
+      "erisim_kaydi": [
+        {
+          "url": "https://karararama.yargitay.gov.tr/",
+          "tarih": "2026-11-08",
+          "sonuc": "erisim_hatasi",
+          "aciklama": "İstek zaman aşımına uğradı. Başlangıç sayfası alınamadı; kurum içi arama tamamlanamadı."
+        }
+      ],
+      "kanit_alintisi": null
+    },
+    {
+      "id": "A2",
+      "atif_turu": "mevzuat",
+      "atif_metni": "4857 sayılı İş Kanunu m. 24",
+      "iddia": "İşverenin her durumda tek taraflı ücret indirimi yapabileceği",
+      "kimlik_duzeyi": "tam_metin",
+      "durum": "uyumsuzluk",
+      "gerekce": "İncelenen TBMM kabul metninde m. 24 işçinin haklı nedenle fesih hakkını düzenler; örnekte ileri sürülen işverenin her durumda ücret indirme yetkisini desteklemez. Uyumsuzluk bu metinle sınırlıdır; güncel konsolide sürüm ve olay tarihindeki uygulanabilirlik doğrulanmadı.",
+      "kaynak_url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D22/Y1/T1/KanunMetni/359dee72-3cd1-4131-8597-48c58658e326.html",
+      "kaynak_erisim_tarihi": "2026-11-08",
+      "kanit_konumu": "4857 sayılı Kanun, 22.5.2003 kabul metni, madde 24; sayfa başındaki sürüm uyarısı.",
+      "insan_kontrolu": "Olay tarihini belirleyin; ilgili tarihteki konsolide metni ve değişiklikleri resmî kaynaklardan kontrol edin.",
+      "resmi_basvuru_adi": "Mevzuat Bilgi Sistemi",
+      "resmi_basvuru_url": "https://www.mevzuat.gov.tr/",
+      "erisim_kaydi": [
+        {
+          "url": "https://www.mevzuat.gov.tr/",
+          "tarih": "2026-11-08",
+          "sonuc": "erisim_hatasi",
+          "aciklama": "İstek zaman aşımına uğradı. Başlangıç sayfası alınamadı; kurum içi arama tamamlanamadı."
+        },
+        {
+          "url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D22/Y1/T1/KanunMetni/359dee72-3cd1-4131-8597-48c58658e326.html",
+          "tarih": "2026-11-08",
+          "sonuc": "tam_metin",
+          "aciklama": "Web araması ile bulunan TBMM tekil kanun metni açıldı; metin içinde madde 24 incelendi. Sayfa sonraki değişiklikleri içermediğini bildiriyor."
+        }
+      ],
+      "kanit_alintisi": "İşçinin haklı nedenle derhal fesih hakkı"
+    }
+  ],
+  "uzman_onayi_gerekli": true
+}

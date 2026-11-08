@@ -1,0 +1,384 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/turkish-legal-artifacts/cite-check-tr/output-schema.json",
+  "title": "Cite Check TR Report v0.2.7",
+  "description": "Yapısal rapor kuralları; ek olarak scripts/validate_report.py semantik bağ kontrolü yapar. Şema tek başına gerçek hukuki doğrulama değildir.",
+  "type": "object",
+  "required": [
+    "rapor_surumu",
+    "belge_adi",
+    "kontrol_tarihi",
+    "olay_tarihi",
+    "erisim_modu",
+    "uyari",
+    "bulgular",
+    "uzman_onayi_gerekli"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "rapor_surumu": {
+      "const": "0.2.7"
+    },
+    "belge_adi": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kontrol_tarihi": {
+      "type": "string",
+      "format": "date"
+    },
+    "olay_tarihi": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date"
+    },
+    "erisim_modu": {
+      "enum": [
+        "cevrimdisi",
+        "yalnizca_kunye",
+        "resmi_tam_metin",
+        "karma",
+        "erisim_basarisiz"
+      ]
+    },
+    "uyari": {
+      "type": "string",
+      "minLength": 1
+    },
+    "bulgular": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/bulgu"
+      }
+    },
+    "uzman_onayi_gerekli": {
+      "type": "boolean",
+      "const": true,
+      "description": "AI çıktısı yetkili hukukçunun nihai incelemesini gerektirir; bu alan onay verildiğini göstermez."
+    }
+  },
+  "$defs": {
+    "bulgu": {
+      "type": "object",
+      "required": [
+        "id",
+        "atif_turu",
+        "atif_metni",
+        "iddia",
+        "kimlik_duzeyi",
+        "durum",
+        "gerekce",
+        "kaynak_url",
+        "kaynak_erisim_tarihi",
+        "kanit_konumu",
+        "insan_kontrolu",
+        "resmi_basvuru_adi",
+        "resmi_basvuru_url",
+        "erisim_kaydi"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^A[0-9]+$"
+        },
+        "atif_turu": {
+          "enum": [
+            "mevzuat",
+            "yargitay",
+            "danistay",
+            "aym",
+            "kvkk",
+            "diger"
+          ]
+        },
+        "atif_metni": {
+          "type": "string",
+          "minLength": 1
+        },
+        "iddia": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kimlik_duzeyi": {
+          "enum": [
+            "tam_metin",
+            "yalnizca_kimlik",
+            "yok"
+          ]
+        },
+        "durum": {
+          "enum": [
+            "dogrulandi",
+            "uyumsuzluk",
+            "dogrulanamadi",
+            "uzman_incelemesi"
+          ]
+        },
+        "gerekce": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kaynak_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "kaynak_erisim_tarihi": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "kanit_konumu": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "insan_kontrolu": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resmi_basvuru_adi": {
+          "type": "string",
+          "minLength": 1
+        },
+        "resmi_basvuru_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "description": "Resmî arama/başlangıç adresi; incelenmiş belge veya doğrulama kanıtı değildir. Bilinmiyorsa null."
+        },
+        "erisim_kaydi": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/erisim"
+          }
+        },
+        "kanit_alintisi": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "minLength": 8,
+          "description": "Birincil kaynaktan kısa birebir kanıt alıntısı; doğrulandı veya uyumsuzluk için zorunlu; diğer durumlarda null olabilir."
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "durum": {
+                "enum": [
+                  "dogrulandi",
+                  "uyumsuzluk"
+                ]
+              }
+            },
+            "required": [
+              "durum"
+            ]
+          },
+          "then": {
+            "required": [
+              "kanit_alintisi"
+            ],
+            "properties": {
+              "kimlik_duzeyi": {
+                "const": "tam_metin"
+              },
+              "kaynak_url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "kaynak_erisim_tarihi": {
+                "type": "string",
+                "format": "date"
+              },
+              "kanit_konumu": {
+                "type": "string",
+                "minLength": 1
+              },
+              "kanit_alintisi": {
+                "type": "string",
+                "minLength": 8
+              },
+              "erisim_kaydi": {
+                "contains": {
+                  "properties": {
+                    "sonuc": {
+                      "const": "tam_metin"
+                    }
+                  },
+                  "required": [
+                    "sonuc"
+                  ]
+                },
+                "minContains": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "erisim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "url",
+        "tarih",
+        "sonuc",
+        "aciklama"
+      ],
+      "properties": {
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri"
+        },
+        "tarih": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "sonuc": {
+          "enum": [
+            "tam_metin",
+            "yalnizca_kunye",
+            "baslangic_sayfasi",
+            "erisim_hatasi",
+            "sonuc_yok",
+            "arac_yok",
+            "cevrimdisi_test",
+            "icerik_alindi"
+          ]
+        },
+        "aciklama": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "sonuc": {
+                "enum": [
+                  "tam_metin",
+                  "yalnizca_kunye",
+                  "baslangic_sayfasi",
+                  "erisim_hatasi",
+                  "sonuc_yok",
+                  "icerik_alindi"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "url": {
+                "type": "string",
+                "format": "uri"
+              },
+              "tarih": {
+                "type": "string",
+                "format": "date"
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "erisim_modu": {
+            "const": "cevrimdisi"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "bulgular": {
+            "items": {
+              "properties": {
+                "erisim_kaydi": {
+                  "items": {
+                    "properties": {
+                      "sonuc": {
+                        "const": "cevrimdisi_test"
+                      },
+                      "url": {
+                        "type": "null"
+                      },
+                      "tarih": {
+                        "type": "null"
+                      }
+                    }
+                  }
+                },
+                "kaynak_url": {
+                  "type": "null"
+                },
+                "kaynak_erisim_tarihi": {
+                  "type": "null"
+                },
+                "kanit_konumu": {
+                  "type": "null"
+                },
+                "kimlik_duzeyi": {
+                  "const": "yok"
+                },
+                "durum": {
+                  "const": "dogrulanamadi"
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "bulgular": {
+            "contains": {
+              "properties": {
+                "erisim_kaydi": {
+                  "contains": {
+                    "properties": {
+                      "sonuc": {
+                        "enum": [
+                          "tam_metin",
+                          "yalnizca_kunye",
+                          "baslangic_sayfasi",
+                          "erisim_hatasi",
+                          "sonuc_yok",
+                          "arac_yok",
+                          "icerik_alindi"
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}
