@@ -101,3 +101,7 @@ Yerel Python ortamı varsa `scripts/fetch_source.py` kullan; kurulum ve komutlar
 ## Zorunlu insan denetimi
 
 Her çıktıyı “Ön inceleme — yetkili hukukçu denetimi bekliyor” olarak sun. JSON'da `uzman_onayi_gerekli: true` kullan. Model veya teknik doğrulayıcı hukukçu adına nihai onay veremez. `dogrulandi` bulgusu insan onayı değildir. Nihai değerlendirme ve kullanım kararı yetkili hukukçuya aittir; gerçek inceleme olmadan hukukçu kimliği, tarih veya onay üretme.
+
+## İsteğe bağlı resmî yargı kaynakları modülü
+
+Mevcut Python yardımcıları kuruluysa `scripts/official_sources.py` ile Yargıtay/Danıştay karar künyesi araması veya resmî belge erişimi denenebilir. AYM otomatik arama desteklenmez; resmî siteden manuel bulunan aynı-host karar URL'siyle belge alınabilir. Kapsam ve komutlar `scripts/OFFICIAL_SOURCES.md` içindedir. Her `index_results_only` sonucu yalnızca künye, `retrieved_unverified` ise yalnızca alınmış içerik sayılır. Bunlar **tek başına** `dogrulandi` / `tam_metin` kanıtı veya hukukçu onayı değildir. Ağ/kaynak hatasını atfın yokluğu gibi yorumlama; kişisel veri ile arama yapma.

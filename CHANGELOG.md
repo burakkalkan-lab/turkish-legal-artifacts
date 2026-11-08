@@ -84,3 +84,9 @@
 - Kaynak yokluğunda zorunlu `doğrulanamadı` yaklaşımı ve `JSON Schema` rapor biçimi eklendi.
 - Claude Code, Codex, Claude.ai ve evrensel prompt kullanım yönergeleri eklendi.
 - Sentetik çevrimdışı örnek, denetim scripti ve açık kaynak lisansı eklendi.
+
+## Geliştirme dalı — resmî kaynak erişim modülü
+
+- Dört resmî yargı kaynağı için dar kapsamlı `official_sources.py` CLI eklendi. Yargıtay/Danıştay deneysel arama ve belge alma; AYM için manuel arama yönlendirmesi ve güvenli karar URL'si alma.
+- Kaynak arama ve içerik alma hukuki doğrulama olarak etiketlenmez. Testler sentetik yanıtlarla yapılır; resmî site erişim sözleşmesi ayrıca kontrol edilmelidir.
+- Var olan TLS, IP sabitleme ve izin listesi korunur. Yargı MCP'nin bütünü, benchmark ve ek MCP sunucusu entegre edilmedi.
