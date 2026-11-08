@@ -1,0 +1,88 @@
+{
+  "benchmark_version": "0.1.0",
+  "as_of": "2026-11-08",
+  "description": "Cite Check TR için resmî hukuk kaynaklarına dayalı, yeniden yazılmış kısa atıf/iddia örnekleri. Girdiler gerçek müvekkil verisi içermez; yayımlanma tarihindeki hukuk metnini değerlendirir.",
+  "cases": [
+    {
+      "id": "LCT-001",
+      "area": "borclar_hukuku",
+      "case_type": "statute_citation",
+      "source_url": "https://resmigazete.gov.tr/eskiler/2011/02/20110204-1.htm",
+      "source_locator": "6098 sayılı Kanun, 2011 ilk yayımlanan metin, madde 1",
+      "text": "4 Şubat 2011 tarihinde yayımlanan 6098 sayılı Türk Borçlar Kanunu madde 1'e göre sözleşme kurulurken irade açıklaması açık olabileceği gibi örtülü de olabilir.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-002",
+      "area": "borclar_hukuku",
+      "case_type": "statute_citation",
+      "source_url": "https://resmigazete.gov.tr/eskiler/2011/02/20110204-1.htm",
+      "source_locator": "6098 sayılı Kanun, 2011 ilk yayımlanan metin, madde 1",
+      "text": "4 Şubat 2011 tarihinde yayımlanan 6098 sayılı Türk Borçlar Kanunu madde 1'e göre sözleşme kurulurken irade açıklaması hiçbir koşulda örtülü olamaz, daima açık yapılmalıdır.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-003",
+      "area": "is_hukuku",
+      "case_type": "statute_citation",
+      "source_url": "https://www.resmigazete.gov.tr/eskiler/2003/06/20030610.htm",
+      "source_locator": "4857 sayılı Kanun, 2003 ilk yayımlanan metin, madde 22, ilk fıkra",
+      "text": "10 Haziran 2003 tarihinde yayımlanan 4857 sayılı İş Kanunu madde 22'nin ilk metninde çalışma koşullarındaki esaslı değişikliklerin yazılı bildirilmesi ve işçinin altı işgününde yazılı kabulü düzenlenmiştir.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-004",
+      "area": "is_hukuku",
+      "case_type": "statute_citation",
+      "source_url": "https://www.resmigazete.gov.tr/eskiler/2003/06/20030610.htm",
+      "source_locator": "4857 sayılı Kanun, 2003 ilk yayımlanan metin, madde 22",
+      "text": "10 Haziran 2003 tarihinde yayımlanan 4857 sayılı İş Kanunu madde 22, işverenin çalışma koşullarını esaslı biçimde değiştirmek için işçiye yalnızca sözlü bildirim yapmasının yeterli olduğunu açıkça söyler.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-005",
+      "area": "kvkk",
+      "case_type": "statute_citation",
+      "source_url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D26/Y1/T1/KanunMetni/49b3460d-3d92-413d-9a12-555cfa749b1f.html",
+      "source_locator": "6698 sayılı Kanun, 2016 kabul metni, madde 5 fıkra 2",
+      "text": "2016 yılında kabul edilen 6698 sayılı Kanun madde 5'in ikinci fıkrası bazı şartlar gerçekleştiğinde ilgili kişinin açık rızası olmaksızın kişisel veri işlenebilmesine izin verir.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-006",
+      "area": "kvkk",
+      "case_type": "statute_citation",
+      "source_url": "https://cdn.tbmm.gov.tr/KKBSPublicFile/D26/Y1/T1/KanunMetni/49b3460d-3d92-413d-9a12-555cfa749b1f.html",
+      "source_locator": "6698 sayılı Kanun, 2016 kabul metni, madde 5 fıkra 1-2",
+      "text": "2016 yılında kabul edilen 6698 sayılı Kanun madde 5'e göre açık rıza olmadan kişisel veri işlenmesi hiçbir koşulda mümkün değildir; maddede istisna yoktur.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-007",
+      "area": "yargitay",
+      "case_type": "court_decision_citation",
+      "source_url": "https://karararama.yargitay.gov.tr/",
+      "source_locator": "Kurgusal 2099 tarihli ve 99. Hukuk Dairesi künyesi; gerçek bir karar olduğu öne sürülmez.",
+      "text": "Yargıtay 99. Hukuk Dairesinin 2099/12345 E. ve 2099/67890 K. sayılı kararına göre işçinin her gecikmesi otomatik olarak haklı fesih nedenidir.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-008",
+      "area": "kvkk",
+      "case_type": "administrative_decision_citation",
+      "source_url": "https://www.kvkk.gov.tr/Icerik/7399/2022-662",
+      "source_locator": "KVKK 7/7/2022 tarihli 2022/662 sayılı karar özeti (tam gerekçe yerine geçmez)",
+      "text": "KVKK'nin 07/07/2022 tarihli ve 2022/662 sayılı kararının yayımlanmayan tam gerekçesinde, özette hiç geçmeyen ilave bir istisnanın kabul edildiği ileri sürülmektedir.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    },
+    {
+      "id": "LCT-009",
+      "area": "borclar_hukuku",
+      "case_type": "statute_citation",
+      "source_url": "https://resmigazete.gov.tr/eskiler/2011/02/20110204-1.htm",
+      "source_locator": "6098 sayılı Kanun, 2011 ilk yayımlanan metin, madde 1",
+      "text": "2026 yılında yalnızca elektronik mesajlaşma yoluyla kurulduğu söylenen, sözleşme türü ve şartları açıklanmayan bir anlaşmanın geçerliliği, 6098 sayılı Türk Borçlar Kanunu madde 1'e dayanılarak değerlendirilmek isteniyor.",
+      "prompt": "Bu metindeki hukuki atfı tespit et, resmî birincil kaynağı açmayı dene ve kimlik, somut iddia desteği ile gerekli tarihsel bağlamı ayrı değerlendir. Erişim ve kanıt sınırlarını dürüstçe belirt. Sadece metindeki tek iddia için v0.2.7 şemasına uygun, tek bulgulu JSON raporu üret. Kanıt veya bağlantı uydurma."
+    }
+  ]
+}

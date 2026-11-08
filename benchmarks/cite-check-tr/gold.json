@@ -1,0 +1,53 @@
+{
+  "benchmark_version": "0.1.0",
+  "review_status": "provisional_requires_independent_qualified_lawyer_review",
+  "as_of": "2026-11-08",
+  "warning": "Bu etiketler resmî kaynakların ön incelemesiyle hazırlanmıştır, bağımsız hukukçu onayı veya 2026 güncel mevzuat sertifikası değildir. Model başarısı henüz ölçülmedi.",
+  "labels": [
+    {
+      "id": "LCT-001",
+      "expected_status": "dogrulandi",
+      "rationale": "2011 tarihli Resmî Gazete metnindeki madde 1, açık/örtülü irade açıklamasını ayrı ayrı kabul eder."
+    },
+    {
+      "id": "LCT-002",
+      "expected_status": "uyumsuzluk",
+      "rationale": "Madde 1, irade açıklamasının örtülü olabileceğini belirtir; yalnızca açık olabilir önermesiyle çelişir."
+    },
+    {
+      "id": "LCT-003",
+      "expected_status": "dogrulandi",
+      "rationale": "2003 yayımlanan ilk metindeki madde 22 yazılı bildirim ve altı işgününde yazılı kabul düzenini açıklar."
+    },
+    {
+      "id": "LCT-004",
+      "expected_status": "uyumsuzluk",
+      "rationale": "Madde 22'nin ilk yayımlanan metni esaslı değişiklik için salt sözlü bildirimi yeterli kabul etmez."
+    },
+    {
+      "id": "LCT-005",
+      "expected_status": "dogrulandi",
+      "rationale": "2016 TBMM kabul metni madde 5/2, belirli koşullarda açık rıza aranmamasını düzenler."
+    },
+    {
+      "id": "LCT-006",
+      "expected_status": "uyumsuzluk",
+      "rationale": "Madde 5/2, açık rıza gerekmeyen işleme şartlarını sayar."
+    },
+    {
+      "id": "LCT-007",
+      "expected_status": "dogrulanamadi",
+      "rationale": "2099 tarihli künye açıkça kurgusaldır. Bu testte doğrulanamayan atıf uydurma hükmüne dönüştürülmemelidir; gelecekteki tarihe ilişkin somut karar bulunamaz."
+    },
+    {
+      "id": "LCT-008",
+      "expected_status": "dogrulanamadi",
+      "rationale": "Kurumun yayımladığı karar özeti, yayımlanmamış tam gerekçede başka hüküm bulunduğunu ne doğrular ne çürütür."
+    },
+    {
+      "id": "LCT-009",
+      "expected_status": "uzman_incelemesi",
+      "rationale": "Madde 1'in tarihsel metni tek başına 2026'daki koşulları belirsiz bir elektronik anlaşmanın somut geçerliliğini çözmez."
+    }
+  ]
+}
