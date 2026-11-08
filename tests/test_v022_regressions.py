@@ -16,7 +16,7 @@ from validate_report import validate
 from network_safety import validate_url, UnsafeURL
 import fetch_source as m
 
-SAMPLE = json.loads((ROOT/'cite-check-tr/examples/expected-offline-report.json').read_text())
+SAMPLE = json.loads((ROOT/'cite-check-tr/examples/expected-offline-report.json').read_text(encoding='utf-8'))
 URL = 'https://www.mevzuat.gov.tr/MevzuatMetin/1.5.6098.pdf'
 PROXY_ENV = {'https_proxy': 'http://trusted-proxy.example:8080', 'http_proxy': 'http://trusted-proxy.example:8080'}
 
@@ -43,7 +43,7 @@ class RegressionTests(unittest.TestCase):
     def test_dns_preflight_writes_evidence_without_network(self):
         with tempfile.TemporaryDirectory() as d, patch('network_safety.socket.getaddrinfo', side_effect=socket.gaierror()), patch.object(m,'http_fetch') as http, patch.object(m,'browser_fetch') as browser:
             result = m.fetch(URL, Path(d)/'evidence')
-            saved = json.loads((Path(d)/'evidence/evidence.json').read_text())
+            saved = json.loads((Path(d)/'evidence/evidence.json').read_text(encoding='utf-8'))
             self.assertEqual(saved, result)
             self.assertEqual(result['status'], 'blocked')
             self.assertEqual(result['attempts'][0]['engine'], 'preflight')
@@ -53,7 +53,7 @@ class RegressionTests(unittest.TestCase):
             source = Path(d)/'report.json'; source.write_text(json.dumps(SAMPLE))
             attached = Path(d)/'attached.json'
             m.attach_report(source,'A2',result,attached)
-            self.assertEqual(validate(json.loads(attached.read_text())), [])
+            self.assertEqual(validate(json.loads(attached.read_text(encoding='utf-8'))), [])
 
     def test_trusted_proxy_skips_only_local_dns(self):
         with patch.dict(os.environ, PROXY_ENV, clear=True), patch('network_safety.socket.getaddrinfo', side_effect=AssertionError('local DNS must not run')):
