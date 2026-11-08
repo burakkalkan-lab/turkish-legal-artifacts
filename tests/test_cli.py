@@ -14,7 +14,7 @@ SAMPLE=ROOT/'cite-check-tr/examples/expected-offline-report.json'
 
 class CLITests(unittest.TestCase):
     def test_valid_example_cli_success(self):
-        result=subprocess.run([sys.executable,str(SCRIPT),str(SAMPLE)],text=True,capture_output=True)
+        result=subprocess.run([sys.executable,str(SCRIPT),str(SAMPLE)],text=True,capture_output=True,encoding='utf-8')
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertIn('GEÇTİ',result.stdout)
 
@@ -24,7 +24,7 @@ class CLITests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             p=Path(d)/'wrong.json'
             p.write_text(json.dumps(report,ensure_ascii=False),encoding='utf-8')
-            result=subprocess.run([sys.executable,str(SCRIPT),str(p)],text=True,capture_output=True)
+            result=subprocess.run([sys.executable,str(SCRIPT),str(p)],text=True,capture_output=True,encoding='utf-8')
         self.assertEqual(result.returncode, 1)
         self.assertIn('HATA',result.stderr)
 
