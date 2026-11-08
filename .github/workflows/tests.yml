@@ -1,0 +1,65 @@
+name: Cite Check TR tests
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  hygiene:
+    # Fails if evidence files, secrets or valid TCKN numbers are tracked in the repository.
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Actions are pinned to commit SHAs (tag shown in the comment); Dependabot keeps them current.
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.12'
+      - name: Repository hygiene
+        run: python tools/check_repo_hygiene.py --tracked
+  unit:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ['3.11', '3.12', '3.13']
+        include:
+          - os: windows-latest
+            python-version: '3.12'
+          - os: macos-latest
+            python-version: '3.12'
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install -r cite-check-tr/scripts/requirements.txt
+      - name: Verify package
+        run: python tests/verify_release.py
+      - name: Unit and local HTTP tests
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          python -m pip install -r cite-check-tr/scripts/requirements.txt
+          python -m playwright install --with-deps chromium
+      - name: Local browser integration (no legal-site scraping)
+        env:
+          CITE_CHECK_TEST_BROWSER: '1'
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
